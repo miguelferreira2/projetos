@@ -1,0 +1,163 @@
+/* Body styles */
+body {
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Medication List styles */
+.medication-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex; /* Display medications horizontally */
+}
+
+.medication-list li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  margin-right: 10px; /* Add some spacing between medications */
+  padding: 10px;
+}
+
+.medication-list li:last-child {
+  margin-right: 0; /* Remove right margin for the last medication */
+}
+
+.medication-list li:hover {
+  background-color: #f9f9f9;
+}
+
+/* Alternatives styles */
+.alternatives {
+  margin-top: 20px;
+}
+
+.alternatives-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.alternatives-list li {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.alternatives-list li label {
+  display: flex;
+  align-items: center;
+}
+
+.alternatives-list li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Checkbox styles */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #333;
+  border-color: #333;
+}
+
+/* Label styles */
+label {
+  font-weight: 400;
+}
+
+/* Price styles */
+.price {
+  font-weight: bold;
+  color: #777;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/*body {
+  background-color: #333;
+  color: #fff;
+}
+
+.prescription-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.prescription-table th {
+  background-color: #444;
+  color: #fff;
+  border-bottom: 1px solid #555;
+  padding: 10px;
+  text-align: left;
+}
+
+.prescription-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.prescription-table tr:last-child td {
+  border-bottom: none;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.redirect-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.redirect-button:hover {
+  background-color: #0056b3;
+}
+
+
+.select-dropdown {
+  background-color: #444;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.select-dropdown option {
+  background-color: #333;
+  color: #fff;
+}*/

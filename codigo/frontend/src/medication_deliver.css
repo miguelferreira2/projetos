@@ -1,0 +1,30 @@
+.medication-success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #222222;
+  }
+  
+  .medication-success-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .medication-success-message {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .medication-success-message p {
+    margin-bottom: 10px;
+    color: #adabab;
+  }
+  
+  .medication-success-robot {
+    width: 200px;
+    height: auto;
+  }
+  
