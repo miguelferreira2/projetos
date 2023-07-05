@@ -6,4 +6,4 @@ class DrugAdmin(admin.ModelAdmin):
     
 # Register your models here.
 
-admin.site.register(Drug, DrugAdmin)
+admin.site.register(Drug, DrugAdmin)   
