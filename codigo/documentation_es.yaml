@@ -1,0 +1,201 @@
+openapi: 3.0.3
+info:
+  title: EsPharmacy
+  description: |-
+    Documentação do trabalho prático de Engenharia de Software.
+  
+  contact:
+    email: mcferreira@student.dei.uc.pt
+    name: ES Group
+  
+  version: 1.0.0
+
+servers:
+  - url: http://127.0.0.1:8000/
+
+paths:
+  /login:
+    post:
+      description: Fazer login de um membro da farmácia
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              example:
+                username: "admin"
+                password: "password"
+      responses:
+        "200":
+          description: "You're in!"
+  
+  /medication_delivered:
+    get:
+      summary: Retrieve Medication Delivery Information
+      responses:
+        '200':
+          description: Medication delivery response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Medication delivered
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Invalid request
+
+  /payment:
+    get:
+      summary: Retrieve Payment Success Information
+      responses:
+        '200':
+          description: Payment success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Payment successful
+                  data:
+                    type: object
+                    properties:
+                      selectChosenAlternatives:
+                        type: array
+                        items:
+                          type: string
+                        example: ['alternative1', 'alternative2']
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Invalid request
+                
+  /invoice:
+    get:
+      summary: Retrieve Invoice Information
+      responses:
+        '200':
+          description: Invoice response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Invoice generated successfully
+                  payment_options:
+                    type: array
+                    items:
+                      type: string
+                    example: ['Cash/Card', 'Face Recognition']
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Invalid request
+                
+  /list:
+    get:
+      summary: Retrieve Medication List
+      responses:
+        '200':
+          description: Medication list response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  medications:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Medication'
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Invalid request
+
+  /qr_code:
+    get:
+      summary: Generate QR Code
+      responses:
+        '200':
+          description: QR Code image response
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Medication:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Medication A
+        alternatives:
+          type: array
+          items:
+            $ref: '#/components/schemas/Alternative'
+    Alternative:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Alternative 1
+        price:
+          type: number
+          example: 10.99
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Invalid request
